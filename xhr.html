@@ -42,29 +42,60 @@
         //     }, 1000);
         // })
 
-        const ubahwarna = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(first.style.color = 'red')
-            },3000)
+        btn.addEventListener('click', () => {
+            return new Promise(function(resolve){
+                setTimeout(()=>{
+                    resolve()
+                },3000)
+            })
+            .then(()=>{
+                console.log("1")
+                first.style.color = "red"
+                return new Promise(function(resolve){
+                    setTimeout(() =>{
+                        resolve()
+                    },4000)
+                })
+            })
+            .then(()=>{
+                console.log("2")
+                second.style.color = "blue"
+                return new Promise(function(resolve){
+                    setTimeout(() =>{
+                        resolve()
+                    },3000)
+                })
+            })
+            .then(()=>{
+                console.log("3")
+                third.style.color = "green"
+                return new Promise(function(resolve){
+                    setTimeout(() =>{
+                        resolve()
+                    },1000)
+                })
+            })
         })
 
-        ubahwarna
-        .then(() => {
-            ubahwarna = new Promise(() => {
-                setTimeout(() => {
-                    second.style.color = "blue"
-                },4000)
-            })
-            // setTimeout(() => {
-            //     second.style.color = "blue"
-            // },4000)
-        })
+        // ubahwarna
+        // .then(() => {
+        //     const warna = new Promise((resolve,reject) => {
+        //         setTimeout(() => {
+        //             second.style.color = "blue"
+        //         },4000)
+        //     })
+        //     // setTimeout(() => {
+        //     //     second.style.color = "blue"
+        //     // },4000)
+        //         warna
+        //         .then(() => {
+        //         setTimeout(() => {
+        //             third.style.color = "green"
+        //         },1000)
+        //     })
+        // })
         
-        ubahwarna.then(() => {
-            setTimeout(() => {
-                third.style.color = "green"
-            },1000)
-        })
+        
         
     </script>
 </body>
