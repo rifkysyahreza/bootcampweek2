@@ -46,25 +46,25 @@
             setTimeout(() => {
                 resolve(first.style.color = 'red')
             },3000)
-            setTimeout(() => {
-                resolve(second.style.color = "blue")
-            },1000)
-            setTimeout(() => {
-                resolve(third.style.color = "green")
-            },4000)
         })
 
-        // ubahwarna
-        // .then(() => {
-        //     setTimeout(() => {
-        //         second.style.color = "blue"
-        //     },1000)
-        // })
-        // .then(() => {
-        //     setTimeout(() => {
-        //         third.style.color = "green"
-        //     },3000)
-        // })
+        ubahwarna
+        .then(() => {
+            ubahwarna = new Promise(() => {
+                setTimeout(() => {
+                    second.style.color = "blue"
+                },4000)
+            })
+            // setTimeout(() => {
+            //     second.style.color = "blue"
+            // },4000)
+        })
+        
+        ubahwarna.then(() => {
+            setTimeout(() => {
+                third.style.color = "green"
+            },1000)
+        })
         
     </script>
 </body>
